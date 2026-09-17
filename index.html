@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="DZZ Cards: cartas Pokémon para colecionadores.">
+	<title>DZZ Cards | Cartas Pokémon</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="announcement"><span>◆</span> Frete grátis em pedidos acima de R$ 180 <span class="announcement-detail">• Envio para todo o Brasil</span></div>
+
+	<header class="site-header">
+		<a class="brand" href="#top" aria-label="DZZ Cards - início">
+			<span class="brand-mark">D</span>
+			<span><strong>DZZ</strong><small>CARDS</small></span>
+		</a>
+		<nav class="main-nav" aria-label="Navegação principal">
+			<a href="#catalogo">Catálogo</a>
+			<a href="#colecoes">Coleções</a>
+			<a href="#sobre">Sobre a loja</a>
+		</nav>
+		<div class="header-actions">
+			<label class="header-search"><span>⌕</span><input id="headerSearch" type="search" placeholder="Buscar cartas..." aria-label="Buscar cartas"></label>
+			<button class="theme-button" id="themeButton" type="button" aria-label="Ativar modo escuro" title="Alternar tema"><span id="themeIcon">☾</span></button>
+			<button class="icon-button" id="accountButton" type="button" aria-label="Abrir conta" title="Minha conta"><span class="user-icon">♙</span><span id="accountLabel">Entrar</span></button>
+			<button class="cart-button" id="cartButton" type="button" aria-label="Abrir carrinho"><span>🛒</span><b id="cartCount">0</b></button>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero" id="colecoes">
+			<div class="hero-copy">
+				<p class="eyebrow">COLECIONE O EXTRAORDINÁRIO</p>
+				<h1>Seu próximo<br><em>nexo</em> está aqui.</h1>
+				<p class="hero-text">Cartas selecionadas para quem leva a coleção a sério, das clássicas às ilustrações mais raras.</p>
+				<a class="primary-button" href="#catalogo">Explorar cartas <span>↗</span></a>
+			</div>
+			<div class="hero-art" aria-label="Carta Charizard Base Set em destaque">
+				<div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+				<div class="featured-card-wrap"><img class="featured-card" src="https://images.pokemontcg.io/base1/4.png" alt="Carta Charizard Base Set" fetchpriority="high"><span class="featured-label">CARTA EM DESTAQUE <b>01 / 24</b></span></div>
+				<span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✧</span>
+			</div>
+		</section>
+
+		<section class="trust-strip" aria-label="Vantagens da loja">
+			<div><span class="trust-icon">◈</span><span><b>Curadoria real</b><small>Cartas escolhidas a dedo</small></span></div>
+			<div><span class="trust-icon">⌁</span><span><b>Envio protegido</b><small>Embalagem à prova de impacto</small></span></div>
+			<div><span class="trust-icon">↺</span><span><b>Compra tranquila</b><small>7 dias para trocar</small></span></div>
+			<div><span class="trust-icon">✦</span><span><b>Comunidade Nexo</b><small>Clube para colecionadores</small></span></div>
+		</section>
+
+		<section class="catalog-section" id="catalogo">
+			<div class="section-heading"><div><p class="eyebrow">A LOJA</p><h2>Escolhas da semana</h2></div><span class="product-total" id="productTotal">24 itens</span></div>
+			<div class="catalog-toolbar"><div class="filter-tabs" role="tablist"><button class="filter active" data-filter="todos" type="button">Todos</button><button class="filter" data-filter="cartas" type="button">Cartas</button></div><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar na coleção..." aria-label="Buscar produtos"></label></div>
+			<div class="product-grid" id="productGrid"></div>
+			<p class="empty-state" id="emptyState" hidden>Nenhum item encontrado. Tente outra busca.</p>
+		</section>
+
+		<section class="club-banner" id="sobre"><div><p class="eyebrow">PARA QUEM COLECIONA</p><h2>Mais que cartas.<br><em>Uma comunidade.</em></h2></div><p>Entre para o Clube Nexo e receba novidades, drops exclusivos e um desconto de boas-vindas.</p><button class="outline-button" id="clubButton" type="button">Quero fazer parte <span>→</span></button></section>
+	</main>
+
+	<footer class="site-footer"><div class="brand footer-brand"><span class="brand-mark">D</span><span><strong>DZZ</strong><small>CARDS</small></span></div><span>Feito para colecionadores, desde 2024.</span><span class="footer-note">Preços fictícios para demonstração.</span></footer>
+
+	<div class="overlay" id="overlay" hidden></div>
+	<aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true"><div class="drawer-header"><div><p class="eyebrow">SUA SELEÇÃO</p><h2 id="cartTitle">Carrinho <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCart" type="button" aria-label="Fechar carrinho">×</button></div><div class="cart-items" id="cartItems"><div class="cart-empty"><span>✦</span><p>Seu carrinho está vazio.</p><small>As melhores cartas ainda estão esperando.</small></div></div><div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div><button class="primary-button checkout-button" id="checkoutButton" type="button">Finalizar compra <span>→</span></button></div></aside>
+
+	<div class="modal-wrap" id="accountModal" hidden><section class="account-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><button class="close-button" id="closeAccount" type="button" aria-label="Fechar login">×</button><div class="modal-logo">N</div><p class="eyebrow" id="modalEyebrow">BEM-VINDO DE VOLTA</p><h2 id="loginTitle">Entre na sua conta</h2><p class="modal-intro">Acompanhe seus pedidos e salve suas cartas favoritas.</p><form id="loginForm"><label>E-mail<input type="email" id="emailInput" placeholder="voce@email.com" required></label><label>Senha<input type="password" id="passwordInput" placeholder="••••••••" minlength="4" required></label><button class="primary-button full-button" type="submit">Entrar na Nexo <span>→</span></button></form><p class="account-status" id="accountStatus"></p><div class="modal-divider"><span>ou</span></div><button class="ghost-button" id="createAccount" type="button">Criar uma conta</button></section></div>
+
+	<div class="modal-wrap" id="productModal" hidden><section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><button class="close-button" id="closeProduct" type="button" aria-label="Fechar detalhes">×</button><div class="detail-visual" id="detailVisual"></div><div class="detail-copy"><p class="eyebrow">DETALHES DO ITEM</p><h2 id="detailTitle"></h2><p class="detail-type" id="detailType"></p><p class="detail-description" id="detailDescription"></p><div class="detail-purchase"><strong id="detailPrice"></strong><button class="primary-button" id="detailAdd" type="button">Adicionar ao carrinho <span>+</span></button></div></div></section></div>
+
+	<div class="toast" id="toast" role="status"></div>
+	<script src="script.js"></script>
+</body>
+</html>
